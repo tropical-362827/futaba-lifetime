@@ -4,6 +4,7 @@ import datetime
 from datetime import timedelta
 import requests
 import joblib
+from zoneinfo import ZoneInfo
 
 # ---------------------------
 # キャッシュ関数の定義
@@ -35,7 +36,7 @@ model_upper = load_model(0.95)
 # ---------------------------
 # 現在時刻と入力特徴量の準備
 # ---------------------------
-now = datetime.datetime.now()
+now = datetime.datetime.now(ZoneInfo("Asia/Tokyo"))
 hour = now.hour
 minute = now.minute
 weekday = now.weekday()  # Monday=0, Sunday=6
