@@ -23,7 +23,7 @@ def get_catalog_length():
 
 @st.cache_resource
 def load_model(quantile):
-    file_name = f"lgbm_quantile_{int(quantile*100)}.pkl"
+    file_name = f"./models/lgbm_quantile_{int(quantile*100)}.pkl"
     return joblib.load(file_name)
 
 # ---------------------------
